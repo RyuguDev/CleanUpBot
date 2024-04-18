@@ -16,9 +16,9 @@ Viele der aufgeführten Accounts wurden nachweislich in verschiedenen Bereichen,
 
 ---
 
-## Schritt 1: Herunterladen des Bot-Pakets
+## Schritt 1: Download
 
-Lade das Bot-Paket herunter, das die folgenden Dateien enthält:
+Lade dir alles als ZIP runter. Enthalten sein sollte:
 
 - `bot.js`: Der JavaScript-Code für den Discord-Bot.
 - `Ids.txt`: Die Datei, die die Liste der Discord-Account-IDs enthält, die gesperrt werden sollen.

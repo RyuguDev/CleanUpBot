@@ -4,7 +4,7 @@ const readline = require('readline');
 
 const client = new Discord.Client();
 const configPath = './config.txt';
-const banListPath = './banlist.txt';
+const banListPath = './Ids.txt';
 
 let botToken = '';
 

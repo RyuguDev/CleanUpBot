@@ -6,7 +6,7 @@ const client = new Discord.Client();
 const configPath = './config.txt';
 const banListPath = './Ids.txt';
 
-let botToken = '';
+let botToken;
 
 if (fs.existsSync(configPath)) {
     botToken = fs.readFileSync(configPath, 'utf8').trim();
@@ -27,19 +27,20 @@ if (fs.existsSync(configPath)) {
 client.login(botToken);
 
 client.once('ready', () => {
-    console.log('Ich bin bereit!');
+    console.log('Bot Ready to Clean your Discord Up :3');
 });
 
 client.on('message', message => {
     if (message.content.toLowerCase() === '+idiotcleanup' && message.author.bot === false) {
         const bannedUsers = fs.readFileSync(banListPath, 'utf8').trim().split('\n');
 
-        bannedUsers.forEach(userId => {
+        bannedUsers.forEach(line => {
+            const userId = line.trim().split('//')[1];
             const user = client.users.cache.get(userId);
             if (user) {
                 message.guild.members.ban(user, { reason: 'Nicht Sozialfähig' })
-                    .then(() => console.log(`Benutzer ${userId} erfolgreich verbannt.`))
-                    .catch(err => console.error(`Fehler beim Bannen von Benutzer ${userId}:`, err));
+                    .then(() => console.log(`Benutzer ${user.username} (${userId}) erfolgreich verbannt.`))
+                    .catch(err => console.error(`Fehler beim Bannen von Benutzer ${user.username} (${userId}):`, err));
             }
         });
     }

@@ -1,7 +1,7 @@
 
 ---
 
-# Hetzer-Discord-IDs
+# Idioten-Discord-IDs
 
 Diese Liste enthält eine große Anzahl von Discord-Account-IDs von Personen, die mir gegenüber feindselig eingestellt sind oder hinter meinem Rücken über mich herziehen.
 

@@ -11,7 +11,7 @@ CleanUpBot ist ein Discord-Bot, der deinen discord mit dem command +cleanup von 
 
 1. **Klone das Repository**:
    ```bash
-   git clone https://github.com/yourusername/CleanUpBot.git
+   git clone [[https://github.com/yourusername/CleanUpBot.git](https://github.com/RyuguDev/CleanUpBot.git)](https://github.com/RyuguDev/CleanUpBot.git)
    cd CleanUpBot
    ```
 

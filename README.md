@@ -1,56 +1,46 @@
----
+# CleanUpBot
 
-# Idioten Discord-IDs
+CleanUpBot ist ein Discord-Bot, der deinen discord mit dem command +cleanup von idioten befreit.
 
-Diese Liste enthält eine große Anzahl von Discord-Account-IDs von Idioten, die generell nicht sozialfähig sind und als potenzielle Straftäter gelten. Ihre Aktivitäten können von feindseligem Verhalten bis hin zu rechtsextremen Ansichten und Cyberkriminalität reichen.
+## Voraussetzungen
 
-Um die Verbreitung von Fehlinformationen und/oder strafbaren und gefährlichen Inhalten auf deinem Discord-Server zu verhindern, empfehle ich dringend, alle hier aufgeführten Accounts mit /ban von deinem Server zu entfernen.
+- Node.js (empfohlen: Version 14 oder höher)
+- Ein Discord-Bot-Token
 
-Über die Webseite [discord.id](https://discord.id/) kannst du Informationen darüber erhalten, wie die Accounts aktuell heißen, welches Profilbild sie verwenden und wann sie erstellt wurden.
+## Installation
 
-Es ist wichtig zu betonen, dass diese Personen nicht nur generelle Trolle sind, sondern tatsächlich als gefährlich eingestuft werden. Die Veröffentlichung ihrer Accounts dient nicht nur dem Schutz vor Fehlinformationen über meine Person, sondern auch der Sicherheit anderer Nutzer.
-
-Viele der aufgeführten Accounts wurden nachweislich in verschiedenen Bereichen, hauptsächlich im Bereich der Cyberkriminalität, straffällig.
-
-# Bot Tutorial:
-
----
-
-## Schritt 1: Download
-
-Lade dir alles als ZIP runter. Enthalten sein sollte:
-
-- `bot.js`: Der JavaScript-Code für den Discord-Bot.
-- `Ids.txt`: Die Datei, die die Liste der Discord-Account-IDs enthält, die gesperrt werden sollen.
-- `README.md`: Die Readme-Datei mit Informationen zur Verwendung des Bots und zur Bedeutung der Liste.
-
-## Schritt 2: Einrichten des Bots
-
-1. Stelle sicher, dass du Node.js auf deinem Computer installiert hast.
-2. Öffne ein Terminal oder eine Befehlszeile und navigiere zum Verzeichnis, in dem du das Bot-Paket heruntergeladen hast.
-3. Installiere die erforderlichen Pakete, indem du den folgenden Befehl ausführst:
+1. **Klone das Repository**:
+   ```bash
+   git clone https://github.com/yourusername/CleanUpBot.git
+   cd CleanUpBot
    ```
-   npm install discord.js
+
+2. **Installiere die Abhängigkeiten**:
+   ```bash
+   npm install
    ```
-4. Öffne die `config.txt`-Datei und füge deinen Discord-Bot-Token hinzu. Falls du keinen Bot-Token hast, erstelle einen auf der [Discord Developer-Website](https://discord.com/developers/applications).
-5. Starte den Bot, indem du den folgenden Befehl ausführst:
-   ```
+
+3. **Erstelle die `ids.txt`-Datei**:
+   Erstelle im Projektverzeichnis eine Datei namens `ids.txt` und füge die zu bannenden Benutzer-IDs ein. Ein Beispiel für den Inhalt der Datei findest du unten.
+
+4. **Bot-Token konfigurieren**:
+   Ersetze `YOUR_DISCORD_BOT_TOKEN` in der `bot.js`-Datei mit deinem tatsächlichen Discord-Bot-Token.
+
+## Verwendung
+
+1. **Starte den Bot**:
+   ```bash
    node bot.js
    ```
 
-## Schritt 3: Bot auf dem Server einladen
+2. **Gib den Befehl im Discord-Chat ein**:
+   Ein Administrator kann den Befehl `+cleanup` im Chat eingeben, um die Benutzer zu bannen, deren IDs in der `ids.txt`-Datei aufgeführt sind. Stelle sicher dass beide dateien in einem Ordner sind!
+```
 
-1. Gehe zur [Discord Developer-Website](https://discord.com/developers/applications) und wähle deine Anwendung aus.
-2. Gehe zum Abschnitt "OAuth2" und wähle unter "OAuth2 URL Generator" die Berechtigungen aus, die dein Bot benötigt. Mindestens sollte der Bot `BAN_MEMBERS`-Berechtigungen haben.
-3. Kopiere die generierte OAuth2-URL und füge sie in deinem Webbrowser ein.
-4. Wähle den Server aus, auf den du deinen Bot einladen möchtest, und klicke auf "Authorize" oder "Autorisieren".
+## Sicherheitshinweis
 
-## Schritt 4: Verwendung des Bots
+Stelle sicher, dass der Bot nur von vertrauenswürdigen Personen betrieben und verwaltet wird, da er die Berechtigung hat, Benutzer zu bannen. Teile deinen Bot-Token niemals öffentlich.
 
-Sobald der Bot auf deinem Server ist, kannst du ihn verwenden, um die in `Ids.txt` aufgeführten Benutzer zu sperren. Führe einfach den Befehl `+idiotcleanup` im Chat aus, und der Bot sperrt automatisch die entsprechenden Benutzer.
+## Lizenz
 
----
-
-
-**Brauchst du Hilfe? Mein Discord-Server:**
-[https://dsc.gg/rena](https://dsc.gg/rena)
+Dieses Projekt ist lizenziert unter der MIT-Lizenz - siehe die [LICENSE](LICENSE) Datei für Details.

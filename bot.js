@@ -18,7 +18,7 @@ client.once('ready', () => {
 
 client.on('messageCreate', async message => {
     if (message.content === '+cleanup' && message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
-        const filePath = path.join(__dirname, 'ids.txt');
+        const filePath = path.join(__dirname, 'Ids.txt');
         const data = fs.readFileSync(filePath, 'utf8');
         
         // Extract IDs from the file
@@ -36,7 +36,7 @@ client.on('messageCreate', async message => {
             }
         }
 
-        message.channel.send('Cleanup complete. Banned specified users.');
+        message.channel.send('Cleanup complete.');
     }
 });
 

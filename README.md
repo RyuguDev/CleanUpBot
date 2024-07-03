@@ -1,6 +1,7 @@
 # CleanUpBot
 
 CleanUpBot ist ein Discord-Bot, der deinen discord mit dem command +cleanup von idioten befreit.
+Add me: https://discord.com/oauth2/authorize?client_id=1028381387864150017&scope=bot&permissions=8
 
 ## Voraussetzungen
 

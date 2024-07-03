@@ -1,47 +1,43 @@
-const Discord = require('discord.js');
+const { Client, GatewayIntentBits, PermissionsBitField } = require('discord.js');
 const fs = require('fs');
-const readline = require('readline');
+const path = require('path');
 
-const client = new Discord.Client();
-const configPath = './config.txt';
-const banListPath = './Ids.txt';
+const client = new Client({
+    intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.MessageContent
+    ]
+});
 
-let botToken;
-
-if (fs.existsSync(configPath)) {
-    botToken = fs.readFileSync(configPath, 'utf8').trim();
-} else {
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
-
-    rl.question('Bitte geben Sie Ihren Bot-Token ein: ', (token) => {
-        botToken = token.trim();
-        fs.writeFileSync(configPath, botToken);
-        console.log('Bot-Token wurde erfolgreich gespeichert!');
-        rl.close();
-    });
-}
-
-client.login(botToken);
+const token = 'YOUR_DISCORD_BOT_TOKEN';
 
 client.once('ready', () => {
-    console.log('Bot Ready to Clean your Discord Up :3');
+    console.log(`Logged in as ${client.user.tag}`);
 });
 
-client.on('message', message => {
-    if (message.content.toLowerCase() === '+idiotcleanup' && message.author.bot === false) {
-        const bannedUsers = fs.readFileSync(banListPath, 'utf8').trim().split('\n');
-
-        bannedUsers.forEach(line => {
-            const userId = line.trim().split('//')[1];
-            const user = client.users.cache.get(userId);
-            if (user) {
-                message.guild.members.ban(user, { reason: 'Nicht Sozialfähig' })
-                    .then(() => console.log(`Benutzer ${user.username} (${userId}) erfolgreich verbannt.`))
-                    .catch(err => console.error(`Fehler beim Bannen von Benutzer ${user.username} (${userId}):`, err));
+client.on('messageCreate', async message => {
+    if (message.content === '+cleanup' && message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
+        const filePath = path.join(__dirname, 'ids.txt');
+        const data = fs.readFileSync(filePath, 'utf8');
+        
+        // Extract IDs from the file
+        const ids = data.split('\n')
+            .map(line => line.trim())
+            .filter(line => !line.startsWith('//') && line.length > 0);
+        
+        for (const id of ids) {
+            try {
+                const user = await client.users.fetch(id);
+                await message.guild.members.ban(user, { reason: 'Cleanup command issued' });
+                console.log(`Banned user: ${user.tag}`);
+            } catch (error) {
+                console.error(`Failed to ban user with ID: ${id}`, error);
             }
-        });
+        }
+
+        message.channel.send('Cleanup complete. Banned specified users.');
     }
 });
+
+client.login(token);

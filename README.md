@@ -36,7 +36,7 @@ Add me: https://discord.com/oauth2/authorize?client_id=1028381387864150017&scope
 
 2. **Gib den Befehl im Discord-Chat ein**:
    Ein Administrator kann den Befehl `+cleanup` im Chat eingeben, um die Benutzer zu bannen, deren IDs in der `ids.txt`-Datei aufgeführt sind. Stelle sicher dass beide dateien in einem Ordner sind!
-```
+
 
 ## Sicherheitshinweis
 

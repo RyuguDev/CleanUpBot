@@ -12,19 +12,16 @@ Add me: https://discord.com/oauth2/authorize?client_id=1028381387864150017&scope
 
 1. **Klone das Repository**:
    ```bash
-   git clone https://github.com/yourusername/CleanUpBot.git
+   git clone https://github.com/ryugudev/CleanUpBot.git
    cd CleanUpBot
    ```
 
 2. **Installiere die Abhängigkeiten**:
    ```bash
-   npm install
+   npm install discord.js
    ```
 
-3. **Erstelle die `ids.txt`-Datei**:
-   Erstelle im Projektverzeichnis eine Datei namens `ids.txt` und füge die zu bannenden Benutzer-IDs ein. Ein Beispiel für den Inhalt der Datei findest du unten.
-
-4. **Bot-Token konfigurieren**:
+3. **Bot-Token konfigurieren**:
    Ersetze `YOUR_DISCORD_BOT_TOKEN` in der `bot.js`-Datei mit deinem tatsächlichen Discord-Bot-Token.
 
 ## Verwendung

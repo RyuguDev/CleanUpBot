@@ -10,7 +10,8 @@ const client = new Client({
     ]
 });
 
-const token = 'YOUR_DISCORD_BOT_TOKEN';
+// Set your bot token here
+const token = 'YOUR_BOT_TOKEN_HERE';
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}`);

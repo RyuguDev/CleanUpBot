@@ -18,7 +18,7 @@ Add me: https://discord.com/oauth2/authorize?client_id=1028381387864150017&scope
 
 2. **Installiere die Abhängigkeiten**:
    ```bash
-   npm install discord.js
+   npm install discord.js dotenv
    ```
 
 3. **Bot-Token konfigurieren**:

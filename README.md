@@ -39,7 +39,3 @@ Add me: https://discord.com/oauth2/authorize?client_id=(CLIENTID)&scope=bot&perm
 ## Sicherheitshinweis
 
 Stelle sicher, dass der Bot nur von vertrauenswürdigen Personen betrieben und verwaltet wird, da er die Berechtigung hat, Benutzer zu bannen. Teile deinen Bot-Token niemals öffentlich.
-
-## Lizenz
-
-Dieses Projekt ist lizenziert unter der MIT-Lizenz - siehe die [LICENSE](LICENSE) Datei für Details.

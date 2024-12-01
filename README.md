@@ -1,41 +1,51 @@
 # CleanUpBot
 
-CleanUpBot ist ein Discord-Bot, der deinen discord mit dem command +cleanup von idioten befreit.
+CleanUpBot ist ein Discord-Bot, der deinen Server mit dem Befehl `+cleanup` von unerwünschten Benutzern befreit.
 
-Add me: https://discord.com/oauth2/authorize?client_id=(CLIENTID)&scope=bot&permissions=8
+[**Bot hinzufügen**](https://discord.com/oauth2/authorize?client_id=737537444723032086&scope=bot&permissions=8)
+
+---
 
 ## Voraussetzungen
 
-- Node.js (empfohlen: Version 14 oder höher)
-- Ein Discord-Bot-Token
+- **Node.js** (Empfohlen: Version 14 oder höher)
+- **Ein Discord-Bot-Token**
+
+---
 
 ## Installation
 
-1. **Klone das Repository**:
+1. **Repository klonen**:
    ```bash
-   git clone https://github.com/ryugudev/CleanUpBot.git
+   git clone https://github.com/RyuguDev/CleanUpBot.git
    cd CleanUpBot
    ```
 
-2. **Installiere die Abhängigkeiten**:
+2. **Abhängigkeiten installieren**:
    ```bash
-   npm install discord.js dotenv
+   npm install discord.js axios
    ```
 
 3. **Bot-Token konfigurieren**:
-   Ersetze `YOUR_BOT_TOKEN_HERE` in der `bot.js`-Datei mit deinem tatsächlichen Discord-Bot-Token.
+   - Öffne die Datei `bot.js`.
+   - Ersetze den Platzhalter `const token = 'DEIN_BOT_TOKEN';` mit deinem tatsächlichen Discord-Bot-Token.
+
+---
 
 ## Verwendung
 
-1. **Starte den Bot**:
+1. **Bot starten**:
    ```bash
    node bot.js
    ```
 
-2. **Gib den Befehl im Discord-Chat ein**:
-   Ein Administrator kann den Befehl `+cleanup` im Chat eingeben, um die Benutzer zu bannen, deren IDs in der `ids.txt`-Datei aufgeführt sind. Stelle sicher dass beide dateien in einem Ordner sind!
+2. **Befehl im Discord-Chat eingeben**:
+   - Nur Administratoren können den Befehl `+cleanup` verwenden.
+   - Der Bot liest die IDs aus meiner Repo und bannt die entsprechenden Benutzer.
 
+---
 
 ## Sicherheitshinweis
 
-Stelle sicher, dass der Bot nur von vertrauenswürdigen Personen betrieben und verwaltet wird, da er die Berechtigung hat, Benutzer zu bannen. Teile deinen Bot-Token niemals öffentlich.
+- **Schütze deinen Bot-Token!** Teile ihn niemals öffentlich oder speichere ihn in einem öffentlichen Repository.
+- Stelle sicher, dass nur vertrauenswürdige Personen Zugriff auf den Bot haben, da er Benutzer bannen kann.
